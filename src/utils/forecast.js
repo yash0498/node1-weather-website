@@ -11,7 +11,7 @@ const forecast = (latitude, longitude, callback) => {
             callback('Unable to find location')
         }
         else{
-           callback(undefined,body.daily.data[0].summary+' It is currently '+body.currently.temperature+' degree.' + 'There is a '+ body.currently.precipProbability+'% chance of rain')
+           callback(undefined,body.daily.data[0].summary+' It is currently '+body.currently.temperature+' degree.' + 'There is a '+ body.currently.precipProbability+'% chance of rain. Highest temperature of the day is '+body.daily.data[0].temperatureHigh+'. Lowest temperature of the day is '+body.daily.data[0].temperatureLow)
         }
     })
 }
